@@ -57,4 +57,9 @@ export class CartService {
     this.cart.clear();
     localStorage.clear();
   }
+
+  getTraining(training :Training) : number {
+    if(this.cart.get(training.id)) return training.id;
+    return 0;
+  }
 }

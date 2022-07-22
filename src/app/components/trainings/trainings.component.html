@@ -1,4 +1,15 @@
+<ng-container *ngIf="listCategories">
+    <div class="d-flex flex-row justify-content-around m-3" >
+        <div class="d-flex flex-row" *ngFor="let category of listCategories">
+            <button type="button" class="btn btn-outline-info" (click)="displayTrainingsByIdCat(category.id)">{{category.name}}</button> 
+            <!-- (click)="displayTrainingsByIdCat(category.id)" -->
+        </div>
+    </div>
+</ng-container>
+
 <div class="container">
+    <!--  if listTrainingsByIdCat -->
+
     <ng-container *ngIf="listTrainings">
         <table class="table table-striped">
             <thead>
@@ -12,7 +23,7 @@
                     <td>{{training.name}}</td>    
                     <td>{{training.description}}</td>
                     <td>{{training.price}}</td>
-                    <td> <input type="number" name="quantity" style="width: 60px" [(ngModel)]="training.quantity" min=""> </td>
+                    <td> <input type="number" name="quantity" style="width: 60px" [(ngModel)]="training.quantity" min="1"> </td>
                     <td> <a class="btn btn-primary" (click)="onAddToCart(training)"> Ajouter </a></td>
                 </tr>
             </tbody>

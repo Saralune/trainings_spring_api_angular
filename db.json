@@ -1,0 +1,39 @@
+{
+  "trainings": [
+    {
+      "id": 1,
+      "name": "Java",
+      "description": "Formation Java SE 8 sur St Geours",
+      "price": 1500,
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "name": "Angular",
+      "description": "Se former comme des boss",
+      "price": 3500,
+      "quantity": 1
+    },
+    {
+      "id": 3,
+      "name": "JavaScript",
+      "description": "C'est une bonne situation ça, Script ?",
+      "price": 500,
+      "quantity": 1
+    },
+    {
+      "id": 4,
+      "name": "Git",
+      "description": "To Git or not to Git ?",
+      "price": 780,
+      "quantity": 1
+    },
+    {
+      "name": "DotNet",
+      "description": "Dot Dot Dot. Net ?",
+      "price": 78.5,
+      "quantity": 1,
+      "id": 5
+    }
+  ]
+}
