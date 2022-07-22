@@ -1,15 +1,16 @@
 <ng-container *ngIf="listCategories">
     <div class="d-flex flex-row justify-content-around m-3" >
         <div class="d-flex flex-row" *ngFor="let category of listCategories">
-            <button type="button" class="btn btn-outline-info" (click)="displayTrainingsByIdCat(category.id)">{{category.name}}</button> 
-            <!-- (click)="displayTrainingsByIdCat(category.id)" -->
+            <button type="button" class="btn btn-outline-info" (click)="onDisplayTrainingsByIdCat(category.id)">{{category.name}}</button> 
         </div>
     </div>
 </ng-container>
 
-<div class="container">
-    <!--  if listTrainingsByIdCat -->
+<div class="container text-center">
+    <button *ngIf="isByCategory" type="button" class="btn btn-warning"  (click)="onDisplayTrainings()">Retour aux formations</button>
+</div>
 
+<div class="container">
     <ng-container *ngIf="listTrainings">
         <table class="table table-striped">
             <thead>

@@ -15,7 +15,7 @@ export class TrainingsService {
     return this.http.get<Training[]>(environment.host+"/trainings");
   }
   public getTrainingsByIdCat(id: number) {
-    return this.http.get<Training[]>(environment.host+"category/" + id + "/trainings");
+    return this.http.get<Training[]>(environment.host+"/category/" + id + "/trainings");
   }
 
   public getTraining(id : number) {
