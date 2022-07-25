@@ -50,7 +50,7 @@ export class CartService {
   getCustomer() : Customer {
     let customer = localStorage.getItem('customer');
     if(customer)  return  JSON.parse(customer);
-    return new Customer("unknown","","","","");
+    return new Customer("unknown","","","");
   }
 
   clear() {
@@ -61,5 +61,9 @@ export class CartService {
   getTraining(training :Training) : number {
     if(this.cart.get(training.id)) return training.id;
     return 0;
+  }
+
+  getSize() {    
+    return this.cart.size;
   }
 }

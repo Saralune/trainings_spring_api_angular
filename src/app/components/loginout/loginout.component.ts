@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/user.model';
-import { ApiService } from 'src/app/services/api.service';
+import { TrainingsService } from 'src/app/services/trainings.service';
 import { AuthenticateService } from 'src/app/services/authenticate.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class LoginoutComponent implements OnInit {
   connected : boolean = false;
   
   constructor(private formBuilder : FormBuilder, public authService : AuthenticateService, 
-    private apiService : ApiService, private router : Router) { 
+    private apiService : TrainingsService, private router : Router) { 
     this.user = authService.getUser(); 
     this.connected = authService.isConnected();
     this.myForm = this.formBuilder.group({

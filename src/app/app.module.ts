@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -11,6 +11,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { OrderComponent } from './components/order/order.component';
 import { CategoryComponent } from './components/category/category.component';
+import { TrainingComponent } from './components/training/training.component';
+import { LoginoutComponent } from './components/loginout/loginout.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,16 @@ import { CategoryComponent } from './components/category/category.component';
     NotFoundComponent,
     CustomerComponent,
     OrderComponent,
-    CategoryComponent
+    CategoryComponent,
+    LoginoutComponent,
+    TrainingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

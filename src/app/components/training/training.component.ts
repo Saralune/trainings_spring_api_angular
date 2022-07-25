@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Training } from 'src/app/model/training.model';
-import { ApiService } from 'src/app/services/api.service';
+import { TrainingsService } from 'src/app/services/trainings.service';
 
 @Component({
   selector: 'app-training',
@@ -15,7 +15,7 @@ export class TrainingComponent implements OnInit {
   error : string = "";
   status : boolean = false;
 
-  constructor(private formBuilder : FormBuilder, private apiService : ApiService, 
+  constructor(private formBuilder : FormBuilder, private apiService : TrainingsService, 
     private router : Router, private route:ActivatedRoute) { 
     this.training = new Training(0,"","",0,1);
     this.myForm = this.formBuilder.group({
