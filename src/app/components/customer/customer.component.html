@@ -1,5 +1,15 @@
 <div class="container">
-    <div class="col-md-3">
+
+    <!-- TODO Ici une liste déroulante des adresses dispo en fonction du user -->
+    <!-- <select class="form-select" aria-label="Default select example" >
+        <option selected>Open this select menu</option>
+        <option *ngFor="let customer of customers" value="1">{{customer.name}} {{customer.firstName}} -  {{customer.address}} -  {{customer.phone}}</option> 
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select> -->
+
+      <!-- *ngIf="!isCustomer" -->
+    <div class="col-md-3"                  >
         <form #f="ngForm" (ngSubmit)="onSaveCustomer(f.value)">
         <div class="form-group">
             <label class="control-label">Nom : </label>
@@ -18,11 +28,7 @@
             <label class="control-label">Tel :</label>
             <input type="text" name="phone" class="form-control" [(ngModel)]="cartService.getCustomer().phone">
             </div>
-    
-            <div class="form-group">
-            <label class="control-label">Email : </label>
-            <input type="text" name="email" required class="form-control" [(ngModel)]="cartService.getCustomer().email">
-            </div>
+            
             <button type="submit" [disabled]="!f.valid" class="btn btn-primary">Next</button>
         </div>
         </form>

@@ -5,14 +5,17 @@ import { TrainingsComponent } from './components/trainings/trainings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { OrderComponent } from './components/order/order.component';
-import { CategoryComponent } from './components/category/category.component';
+import { TrainingComponent } from './components/training/training.component';
+import { LoginoutComponent } from './components/loginout/loginout.component';
 
 const routes: Routes = [
     { path : 'trainings', component : TrainingsComponent },
     { path : 'cart' , component : CartComponent },
-    { path : 'category' , component : CategoryComponent },
+    //{ path : 'category' , component : CategoryComponent }, //import
     { path : 'order' , component : OrderComponent},
     { path : 'customer' , component : CustomerComponent},
+    { path : 'login' , component : LoginoutComponent},
+    { path : 'training/:id' , component : TrainingComponent},
     { path : '' , redirectTo : 'trainings', pathMatch : 'full' },
     { path: '404', component: NotFoundComponent},
     { path: '**', redirectTo: '/404'}
