@@ -21,7 +21,7 @@ export class LoginoutComponent implements OnInit {
     this.user = authService.getUser(); 
     this.connected = authService.isConnected();
     this.myForm = this.formBuilder.group({
-      email : [this.user.email, [Validators.required,Validators.pattern('[a-z0-9.@]*')]],
+      email : [this.user.mail, [Validators.required,Validators.pattern('[a-z0-9.@]*')]],
       password : [this.user.password, [Validators.required]]
     })
   }

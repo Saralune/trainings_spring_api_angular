@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Customer } from '../model/customer.model';
 import { Training } from '../model/training.model';
+import { User } from '../model/user.model';
+import { AuthenticateService } from './authenticate.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,7 @@ import { Training } from '../model/training.model';
 export class CartService {
   private cart : Map<number,Training>;
 
-  constructor() {     
+  constructor(public authService : AuthenticateService) {     
     // au démarrage du service, je récupère le contenu du local storage : command en cours
     let cart = localStorage.getItem('cart');
     if(cart){  // le panier existe déjà
@@ -50,7 +52,7 @@ export class CartService {
   getCustomer() : Customer {
     let customer = localStorage.getItem('customer');
     if(customer)  return  JSON.parse(customer);
-    return new Customer("unknown","","","");
+    return new Customer("unknown","","","", this.authService.getUser());
   }
 
   clear() {
